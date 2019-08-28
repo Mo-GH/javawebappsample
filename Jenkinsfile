@@ -20,7 +20,7 @@ node {
     def resourceGroup = 'ghh-test' 
     def webAppName = 'ghhp3ds-webapp-dev'
     // login Azure
-    withCredentials([azureServicePrincipal('<mySrvPrincipal>')]) {
+    withCredentials([azureServicePrincipal('p3nethenkins')]) {
       sh '''
         az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
         az account set -s $AZURE_SUBSCRIPTION_ID
