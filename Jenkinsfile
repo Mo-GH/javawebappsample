@@ -7,7 +7,7 @@ def getFtpPublishProfile(def publishProfilesJson) {
       return [url: p.publishUrl, username: p.userName, password: p.userPWD]
 }
 
-node {
+node ('Duesseldorf-Jenkins-2'){
   stage('init') {
     checkout scm
   }
