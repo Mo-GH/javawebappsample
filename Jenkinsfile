@@ -11,8 +11,9 @@ node ('Duesseldorf-Jenkins-2'){
   stage('init') {
     checkout scm
   }
-  tools {
-    maven 'Maven3.5.3'
+   stage('com'){
+    def mvnHome = tool name: 'Apache Maven 3.5.3', type: 'maven'
+    sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
   }
   stage('build') {
     sh 'mvn --version'
