@@ -11,7 +11,7 @@ node ('Duesseldorf-Jenkins-2'){
   stage('init') {
     checkout scm
   }
-   stage('com'){
+   stage('com') {
     def mvnHome = tool name: 'Maven3.5.3', type: 'maven'
     sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
   }
