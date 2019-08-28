@@ -11,7 +11,9 @@ node ('Duesseldorf-Jenkins-2'){
   stage('init') {
     checkout scm
   }
-  
+  tools {
+    maven 'Maven3.5.3'
+  }
   stage('build') {
     sh 'mvn --version'
     sh 'mvn clean package'
