@@ -15,10 +15,7 @@ node ('Duesseldorf-Jenkins-2'){
     def mvnHome = tool name: 'Maven3.5.3', type: 'maven'
     sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
   }
-  stage('build') {
-    sh 'mvn --version'
-    sh 'mvn clean package'
-  }
+
   
   stage('deploy') {
     def resourceGroup = 'ghh-test' 
